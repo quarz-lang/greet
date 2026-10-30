@@ -1,0 +1,7 @@
+require "test"
+
+class GreeterTest < Test::Case
+  def test_hello -> Void
+    assert_equal("Hello, Ann!", Greet::Greeter.new("Ann").hello)
+  end
+end

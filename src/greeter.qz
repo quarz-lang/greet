@@ -1,0 +1,27 @@
+# Greets someone by name.
+class Greeter
+  @name: String
+
+  def initialize(@name: String); end
+
+  # "Hello, NAME!"
+  def hello -> String = "Hello, #{@name}!"
+
+  # Defines a method `greet_NAME` on the class that calls it, which
+  # greets NAME: a macro, run while the program is compiled
+  # (`static` statements, docs/14).
+  #
+  # ```
+  # class Team < Greet::Greeter
+  #   def initialize; super("team"); end
+  #   greets :world
+  # end
+  # Team.new.greet_world   # => "Hello, world!"
+  # ```
+  static def self.greets(name: Symbol) -> Void
+    doc "Greets #{name}."
+    def_method("greet_#{name}".to_sym) do -> String
+      Greeter.new(name.to_s).hello
+    end
+  end
+end
