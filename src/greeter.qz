@@ -7,6 +7,9 @@ class Greeter
   # "Hello, NAME!"
   def hello -> String = "Hello, #{@name}!"
 
+  # "Goodbye, NAME."
+  def bye -> String = "Goodbye, #{@name}."
+
   # Defines a method `greet_NAME` on the class that calls it, which
   # greets NAME: a macro, run while the program is compiled
   # (`static` statements, docs/14).

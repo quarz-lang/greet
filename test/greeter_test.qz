@@ -4,4 +4,8 @@ class GreeterTest < Test::Case
   def test_hello -> Void
     assert_equal("Hello, Ann!", Greet::Greeter.new("Ann").hello)
   end
+
+  def test_bye -> Void
+    assert_equal("Goodbye, Ann.", Greet::Greeter.new("Ann").bye)
+  end
 end
