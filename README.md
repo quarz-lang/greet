@@ -10,7 +10,7 @@ cogs page depends on, and the Quarz repository's weekly check fetches it.
 Greet = { git = "https://github.com/quarz-lang/greet", tag = "v1.0.0" }
 ```
 
-```ruby
+```crystal
 puts Greet::Greeter.new("Quarz").hello   # => Hello, Quarz!
 ```
 
